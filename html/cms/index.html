@@ -1,0 +1,24 @@
+<%args>
+  $action
+  $id
+  $item_type_id
+</%args>
+<%init>
+  my ( $iH, $itemAH, $itemH, $sequence );
+
+  if ( $item_type_id == Incremental::ITEM_TYPE_POST ) {
+    $itemAH = Hoo::DB::SelectAH( \( 'SELECT id FROM t_item WHERE item_type_id = ? ORDER BY c_sequence, c_name' ), [ Incremental::ITEM_TYPE_POST ] );
+
+    $sequence = 0;
+
+    foreach $iH ( @$itemAH ) {
+      $sequence += 10;
+      Hoo::Item::AdminUpdate( $iH->{ id }, { c_sequence => $sequence } );
+      }
+    }
+  elsif ( $item_type_id == Incremental::ITEM_TYPE_TAG ) {
+    $itemH = Hoo::DB::SelectH( \( 'SELECT c_url_base FROM t_item WHERE id = ?' ), [ $id ] );
+
+    Hoo::Item::AdminUpdate( $id, { c_url => ( '/tag/' . $itemH->{ c_url_base } . '/' ) } );
+    }
+</%init>

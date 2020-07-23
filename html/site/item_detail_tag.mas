@@ -1,0 +1,11 @@
+<& /site/header.mas, class => 'page', id => 'tag', itemH => $itemH &>
+<&| /hoo/format.mas, indent => 5 &><& /site/posts.mas, itemAH => $itemAH &></&>
+<& /site/footer.mas &>\
+<%args>
+  $itemH
+</%args>
+<%init>
+  my ( $itemAH );
+
+  $itemAH = Hoo::DB::SelectAH( \( 'SELECT * FROM t_item WHERE item_type_id = ' . Incremental::ITEM_TYPE_POST . ' AND ( c_tag_id_1 = ? ) OR ( c_tag_id_2 = ? ) OR ( c_tag_id_3 = ? ) OR ( c_tag_id_4 = ? ) OR ( c_tag_id_5 = ? ) ORDER BY c_sequence' ), [ $itemH->{ id }, $itemH->{ id }, $itemH->{ id }, $itemH->{ id }, $itemH->{ id } ] );
+</%init>

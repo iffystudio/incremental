@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- produced by Iffy Studio -->
+<html lang="en">
+  <head>
+    <link href="/css/" rel="stylesheet">
+    <meta charset="UTF-8">
+% if ( $itemH->{ c_meta_description } ) {
+    <meta content="<% $itemH->{ c_meta_description } %>" name="description">
+% }
+% if ( $itemH->{ c_meta_keywords } ) {
+    <meta content="<% $itemH->{ c_meta_keywords } %>" name="keywords">
+% }
+    <script src="/js/jquery-1.3.2.min.js"></script>
+    <script src="/js/jquery.easing.1.3.js"></script>
+    <script src="/js/jquery.vgrid.0.1.4.mod.js"></script>
+    <script src="/js/"></script>
+% if ( ! $local ) {
+    <script>
+      ( function ( i, s, o, g, r, a, m ) { i[ 'GoogleAnalyticsObject' ] = r; i[ r ] = i[ r ] || function () { ( i[ r ].q = i[ r ].q || [ ] ).push( arguments ) }, i[ r ].l = 1 * new Date(); a = s.createElement( o ), m = s.getElementsByTagName( o )[ 0 ]; a.async = 1; a.src = g; m.parentNode.insertBefore( a, m ) } )( window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga' );
+
+      ga( 'create', 'UA-77115616-4', 'auto' );
+      ga( 'send', 'pageview' );
+    </script>
+% }
+% if ( $itemH->{ c_css } ) {
+    <style>
+<&| /hoo/format.mas, indent => 3 &><% $itemH->{ c_css } %></&>
+    </style>
+% }
+    <title>ＩＮＣＲＥＭＥＮＴＡＬ</title>
+  </head>
+  <body<% $id ? ( ' id="' . $id . '"' ) : '' %><% $class ? ( ' class="' . $class . '"' ) : '' %>>
+    <div id="all">
+      <div id="head">
+% if ( $id eq 'home' ) {
+        <h1><img src="/img/logo.svg"></h1>
+% } else {
+        <div class="logo"><a href="/"><img src="/img/logo.svg"></a></div>
+% }
+      </div>
+      <div id="main">\
+<%args>
+  $class => undef
+  $id => undef
+  $itemH
+</%args>

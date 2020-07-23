@@ -1,0 +1,13 @@
+<%init>
+  Hoo::SetMasonRequestObject( $m );
+  Hoo::DB::Connect( { mysql_enable_utf8 => 1 } );
+
+  $itemHH = Hoo::Item::GetAll( [
+    Incremental::ITEM_TYPE_TAG
+    ] );
+
+  Hoo::HandleURL( { %ARGS } );
+</%init>
+<%cleanup>
+  Hoo::DB::Disconnect();
+</%cleanup>

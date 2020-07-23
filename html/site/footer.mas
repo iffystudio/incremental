@@ -1,0 +1,44 @@
+      </div>
+      <div id="foot">
+        <div class="section">
+          <h2>Tags:</h2>
+          <ul class="tags">
+% foreach $iH ( @$itemAH ) {
+            <li><a href="/tag/<% $iH->{ c_url_base } %>/"><% $iH->{ c_name } %></a></li>
+% }
+          </ul>
+        </div>
+        <div class="section">
+          <h2>Pages:</h2>
+          <ul class="pages">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/support/">Support</a></li>
+          </ul>
+        </div>
+        <div class="copyright">© 2020 Iffy Studio</div>
+      </div>
+    </div>
+% if ( $itemH->{ c_video_id } ) {
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      function onYouTubeIframeAPIReady() {
+        var _player = new YT.Player( 'player', {
+          events: { onReady: function () { _player.setPlaybackQuality( 'hd720' ); } },
+          height: '<% $itemH->{ c_video_id } eq 'eT_Y92uZvec' ? 341 : 459 %>',
+          playerVars: { controls: 0, modestbranding: 0, rel: 0, showinfo: 0 },
+          videoId: '<% $itemH->{ c_video_id } %>',
+          width: '<% $itemH->{ c_video_id } eq 'eT_Y92uZvec' ? 606 : 816 %>'
+          } );
+        }
+    </script>
+% }
+  </body>
+</html>\
+<%args>
+  $itemH => undef
+</%args>
+<%init>
+  my ( $itemAH, $iH );
+
+  $itemAH = Hoo::DB::SelectAH( \( 'SELECT DISTINCT i.id, i.c_name, i.c_url_base FROM t_item i INNER JOIN t_item i2 ON ( i.id = i2.c_tag_id_1 ) OR ( i.id = i2.c_tag_id_2 ) OR ( i.id = i2.c_tag_id_3 ) OR ( i.id = i2.c_tag_id_4 ) OR ( i.id = i2.c_tag_id_5 ) WHERE i.id != ' . Incremental::ITEM_STAGING . ' ORDER BY c_name' ) );
+</%init>

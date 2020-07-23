@@ -1,0 +1,25 @@
+% if ( scalar @tag ) {
+<div class="tags"><h<% $h2 ? '2' : '3' %>>Tags:</h<% $h2 ? '2' : '3' %>> \
+%  foreach $i ( @tag ) {
+%   if ( $itemH->{ 'c_tag_id_' . $i } ) {
+<a href="/tag/<% $itemHH->{ $itemH->{ 'c_tag_id_' . $i } }{ c_url_base } %>/"><% $itemHH->{ $itemH->{ 'c_tag_id_' . $i } }{ c_name } %></a>\
+%    if ( $i < ( scalar @tag ) ) {
+, \
+%    }
+%   }
+%  }
+</div>\
+% }
+<%args>
+  $h2 => undef
+  $itemH
+</%args>
+<%init>
+  my ( $i, @tag );
+
+  foreach $i ( 1 .. 5 ) {
+    if ( $itemH->{ 'c_tag_id_' . $i } ) {
+      push @tag, $i;
+      }
+    }
+</%init>

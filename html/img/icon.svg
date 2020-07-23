@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<svg width="2048" height="2048" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="2050" height="2050" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <defs>
+    <path id="mask" d="m714.017029,0l619.966003,0c205.599976,0 308.38501,0 419.051025,34.983002c120.833984,43.983002 216,139.149994 259.981934,259.983002c34.984009,110.658997 34.984009,213.46701 34.984009,419.049988l0,619.965942c0,205.600098 0,308.38501 -34.984009,419.051025c-43.981934,120.833984 -139.147949,216 -259.981934,259.967041c-110.666016,35 -213.45105,35 -419.051025,35l-619.966003,0c-205.600006,0 -308.391998,0 -419.049988,-35c-120.833008,-43.967041 -216,-139.133057 -259.983002,-259.967041c-34.984039,-110.666016 -34.984039,-213.450928 -34.984039,-419.050903l0,-619.966064c0,-205.582977 0,-308.391998 34.983002,-419.049988c43.983002,-120.833008 139.149994,-216 259.983002,-259.983002c110.658997,-34.983002 213.450989,-34.983002 419.051025,-34.983002l0,0"/>
+   </defs>
+   <clipPath id="mask_1_">
+    <use xlink:href="#mask" id="svg_2"/>
+   </clipPath>
+   <g clip-path="url(#mask_1_)" id="svg_3">
+    <circle id="_x33__x5F_ring_x5F_5" fill="#00153a" cx="608.503" cy="1438.612" r="1435"/>
+    <circle id="_x32__x5F_ring_x5F_5" fill="#00153a" cx="1598.504" cy="1172.612" r="1435"/>
+    <circle id="_x31__x5F_ring_x5F_5" fill="#001647" cx="873.503" cy="448.612" r="1435"/>
+    <circle id="_x33__x5F_ring_x5F_4" fill="#001C67" cx="608.521" cy="1439.167" r="1230"/>
+    <circle id="_x32__x5F_ring_x5F_4" fill="#001C67" cx="1598.521" cy="1173.167" r="1230"/>
+    <circle id="_x31__x5F_ring_x5F_4" fill="#001C67" cx="873.521" cy="449.167" r="1230"/>
+    <circle id="_x33__x5F_ring_x5F_3" opacity="0.5" fill="#0245F5" cx="608.667" cy="1439.167" r="1025"/>
+    <circle id="_x32__x5F_ring_x5F_3" opacity="0.5" fill="#0245F5" cx="1598.666" cy="1173.168" r="1025"/>
+    <circle id="_x31__x5F_ring_x5F_3" opacity="0.5" fill="#0245F5" cx="873.667" cy="449.167" r="1025"/>
+    <circle id="_x33__x5F_ring_x5F_2" opacity="0.5" fill="#00a4F5" cx="608.667" cy="1439.167" r="820"/>
+    <circle id="_x32__x5F_ring_x5F_2" opacity="0.5" fill="#00a4F5" cx="1598.666" cy="1173.168" r="820"/>
+    <circle id="_x31__x5F_ring_x5F_2" opacity="0.5" fill="#00a4F5" cx="873.667" cy="449.167" r="820"/>
+    <circle id="_x33__x5F_ring_x5F_1" opacity="0.5" fill="#00F5ef" cx="608.667" cy="1439.167" r="615"/>
+    <circle id="_x32__x5F_ring_x5F_1" opacity="0.5" fill="#00F5ef" cx="1598.666" cy="1173.167" r="615"/>
+    <circle id="_x31__x5F_ring_x5F_1" opacity="0.5" fill="#00F5ef" cx="873.667" cy="449.167" r="615"/>
+    <circle id="_x33__x5F_tip" fill="#fff" cx="608.667" cy="1439.167" r="410"/>
+    <rect id="_x33__x5F_shaft" x="-146.673" y="1295.737" transform="matrix(-0.7071,-0.7071,0.7071,-0.7071,-811.8442,3231.4048) " fill="#fff" width="820" height="976.209"/>
+    <circle id="_x33__x5F_nail" fill="#7BC5F8" cx="608.979" cy="1438.822" r="205"/>
+    <circle id="_x32__x5F_tip" fill="#fff" cx="1598.666" cy="1173.167" r="410"/>
+    <rect id="_x32__x5F_shaft" x="1588.783" y="838.169" transform="matrix(-0.9659,-0.2588,0.2588,-0.9659,3370.4707,2940.0244) " fill="#fff" width="579.949" height="820"/>
+    <circle id="_x32__x5F_nail" fill="#239FF3" cx="1598.213" cy="1172.07" r="205"/>
+    <circle id="_x31__x5F_tip" fill="#fff" cx="873.667" cy="449.167" r="410"/>
+    <rect id="_x31__x5F_shaft" x="384.038" y="-154.812" transform="matrix(-0.9659,0.2589,-0.2589,-0.9659,1600.3955,93.5655) " fill="#fff" width="820" height="613.954"/>
+    <circle id="_x31__x5F_nail" fill="#5496F0" cx="873.811" cy="449.608" r="205"/>
+   </g>
+  </g>
+ </g>
+</svg>

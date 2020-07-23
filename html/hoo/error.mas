@@ -1,0 +1,3 @@
+<%init>
+  use Data::Dumper; die Dumper %ARGS;
+</%init>

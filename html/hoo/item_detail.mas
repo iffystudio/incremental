@@ -1,0 +1,14 @@
+<%args>
+  $itemH
+</%args>
+<%init>
+  if ( ( $itemH->{ item_type_id } == Incremental::ITEM_TYPE_PAGE ) || ( $itemH->{ item_type_id } == Incremental::ITEM_TYPE_POST ) ) {
+    $m->comp( '/site/item_detail_post.mas', %ARGS );
+    }
+  elsif ( $itemH->{ item_type_id } == Incremental::ITEM_TYPE_TAG ) {
+    $m->comp( '/site/item_detail_tag.mas', %ARGS );
+    }
+  else {
+    die 'Unknown item type.';
+    }
+</%init>

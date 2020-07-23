@@ -1,0 +1,23 @@
+<& /site/header.mas, class => 'page', id => 'post', itemH => $itemH &>
+        <div class="container">
+          <div class="left text">
+<&| /hoo/format.mas, double_space => 1, indent => 6 &><% $itemH->{ c_content_left } %></&>
+          </div>
+          <div class="right">
+% if ( ! $itemH->{ c_text_on_left } ) {
+            <h1><% $itemH->{ c_h1 } || $itemH->{ c_name } %></h1>
+% }
+<&| /hoo/format.mas, double_space => 1, indent => 6 &><% $itemH->{ c_content_right } %></&>
+          </div>
+          <div class="c-b"></div>
+        </div>
+<&| /hoo/format.mas, indent => 4 &><& /site/posts.mas, itemAH => $itemAH &></&>
+<& /site/footer.mas, itemH => $itemH &>\
+<%args>
+  $itemH
+</%args>
+<%init>
+  my ( $itemAH );
+
+  $itemAH = Hoo::DB::SelectAH( \( 'SELECT * FROM t_item WHERE item_type_id = ' . Incremental::ITEM_TYPE_POST . ' AND c_visible_home = 1 AND id != ' . $itemH->{ id } . ' ORDER BY c_sequence' ) );
+</%init>

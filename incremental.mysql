@@ -1,0 +1,277 @@
+-- MySQL dump 10.13  Distrib 5.5.55, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: incremental
+-- ------------------------------------------------------
+-- Server version	5.5.55-0+deb8u1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `t_item`
+--
+
+DROP TABLE IF EXISTS `t_item`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_item` (
+  `id` int(11) NOT NULL DEFAULT '0',
+  `item_type_id` int(11) NOT NULL DEFAULT '0',
+  `c_locked` int(11) NOT NULL DEFAULT '0',
+  `c_name` varchar(255) NOT NULL DEFAULT '',
+  `c_url` text,
+  `c_navigable` int(11) NOT NULL DEFAULT '1',
+  `c_visible` int(11) NOT NULL DEFAULT '1',
+  `c_sequence` int(11) NOT NULL DEFAULT '0',
+  `c_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `c_img_src` varchar(255) NOT NULL DEFAULT '',
+  `c_img_alt` text,
+  `c_img_height` int(11) NOT NULL DEFAULT '0',
+  `c_img_width` int(11) NOT NULL DEFAULT '0',
+  `c_category_id` int(11) NOT NULL DEFAULT '0',
+  `c_product_id` int(11) NOT NULL DEFAULT '0',
+  `c_description` text,
+  `c_summary` varchar(255) NOT NULL DEFAULT '',
+  `c_price` float(6,2) NOT NULL DEFAULT '0.00',
+  `c_total` float(6,2) NOT NULL DEFAULT '0.00',
+  `c_email` varchar(255) NOT NULL DEFAULT '',
+  `c_date` datetime DEFAULT NULL,
+  `c_paypal_transaction_id` varchar(255) NOT NULL DEFAULT '',
+  `c_order_id` int(11) NOT NULL DEFAULT '0',
+  `c_img_border` int(11) NOT NULL DEFAULT '0',
+  `c_quantity` int(11) NOT NULL DEFAULT '0',
+  `c_line_price` float(6,2) NOT NULL DEFAULT '0.00',
+  `c_enlarged` int(11) NOT NULL DEFAULT '0',
+  `c_enlarged_width` int(11) NOT NULL DEFAULT '0',
+  `c_enlarged_height` int(11) NOT NULL DEFAULT '0',
+  `c_notes` text,
+  `c_google_analytics` varchar(255) NOT NULL DEFAULT '',
+  `c_h1` varchar(255) NOT NULL DEFAULT '',
+  `c_title` varchar(255) NOT NULL DEFAULT '',
+  `c_subheading` varchar(255) NOT NULL DEFAULT '',
+  `c_heading` varchar(255) NOT NULL DEFAULT '',
+  `c_content` text,
+  `c_content_top` text,
+  `c_content_bottom` text,
+  `c_paypal_email` varchar(255) NOT NULL DEFAULT '',
+  `c_content_empty_cart` text,
+  `c_paypal_product_name` varchar(255) NOT NULL DEFAULT '',
+  `c_paypal_generic_description` varchar(255) NOT NULL DEFAULT '',
+  `c_tab` varchar(255) NOT NULL DEFAULT '',
+  `c_content_left` text,
+  `c_content_thanks` text,
+  `c_domain` varchar(255) NOT NULL DEFAULT '',
+  `c_google_adsense` text,
+  `c_google_adsense_display` int(11) NOT NULL DEFAULT '0',
+  `c_date_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `c_content_empty_order` text,
+  `c_domain_full` varchar(255) NOT NULL DEFAULT '',
+  `c_css_class` varchar(255) NOT NULL DEFAULT '',
+  `c_image_id` int(11) NOT NULL DEFAULT '0',
+  `c_image_id_1` int(11) NOT NULL DEFAULT '0',
+  `c_image_id_2` int(11) NOT NULL DEFAULT '0',
+  `c_image_id_3` int(11) NOT NULL DEFAULT '0',
+  `c_image_id_4` int(11) NOT NULL DEFAULT '0',
+  `c_content_id` int(11) NOT NULL DEFAULT '0',
+  `c_img_width_big` int(11) NOT NULL DEFAULT '0',
+  `c_img_height_big` int(11) NOT NULL DEFAULT '0',
+  `c_attribute_type_id` int(11) NOT NULL DEFAULT '0',
+  `c_name_short` varchar(255) NOT NULL DEFAULT '',
+  `c_price_adjustment` float(6,2) NOT NULL DEFAULT '0.00',
+  `c_attribute_type_id_1` int(11) NOT NULL DEFAULT '0',
+  `c_label` varchar(255) NOT NULL DEFAULT '',
+  `c_attribute_id_1` int(11) NOT NULL DEFAULT '0',
+  `c_validation_message` varchar(255) NOT NULL DEFAULT '',
+  `c_home_page` int(11) NOT NULL DEFAULT '0',
+  `c_image_id_5` int(11) NOT NULL DEFAULT '0',
+  `c_url_redirect` varchar(255) NOT NULL DEFAULT '',
+  `c_post_id` int(11) NOT NULL DEFAULT '0',
+  `c_group_1` int(11) NOT NULL DEFAULT '0',
+  `c_group_2` int(11) NOT NULL DEFAULT '0',
+  `c_group_3` int(11) NOT NULL DEFAULT '0',
+  `c_copula` int(11) NOT NULL DEFAULT '0',
+  `c_group` int(11) NOT NULL DEFAULT '0',
+  `c_kana` varchar(255) NOT NULL DEFAULT '',
+  `c_translation` varchar(255) NOT NULL DEFAULT '',
+  `c_level` int(11) NOT NULL DEFAULT '0',
+  `c_meta_description` varchar(255) NOT NULL DEFAULT '',
+  `c_meta_keywords` varchar(255) NOT NULL DEFAULT '',
+  `c_string_1` varchar(255) NOT NULL DEFAULT '',
+  `c_string_2` varchar(255) NOT NULL DEFAULT '',
+  `c_string_3` varchar(255) NOT NULL DEFAULT '',
+  `c_text_1` text,
+  `c_text_2` text,
+  `c_text_3` text,
+  `c_text_4` text,
+  `c_text_5` text,
+  `c_string_4` varchar(255) NOT NULL DEFAULT '',
+  `c_string_5` varchar(255) NOT NULL DEFAULT '',
+  `c_string_6` varchar(255) NOT NULL DEFAULT '',
+  `c_string_7` varchar(255) NOT NULL DEFAULT '',
+  `c_string_8` varchar(255) NOT NULL DEFAULT '',
+  `c_string_9` varchar(255) NOT NULL DEFAULT '',
+  `c_string_10` varchar(255) NOT NULL DEFAULT '',
+  `c_h2_1` varchar(255) NOT NULL DEFAULT '',
+  `c_item_id_1` int(11) NOT NULL DEFAULT '0',
+  `c_item_id_2` int(11) NOT NULL DEFAULT '0',
+  `c_item_id_3` int(11) NOT NULL DEFAULT '0',
+  `c_item_id_4` int(11) NOT NULL DEFAULT '0',
+  `c_item_id_5` int(11) NOT NULL DEFAULT '0',
+  `c_item_id_6` int(11) NOT NULL DEFAULT '0',
+  `c_item_id_7` int(11) NOT NULL DEFAULT '0',
+  `c_item_id_8` int(11) NOT NULL DEFAULT '0',
+  `c_item_id_9` int(11) NOT NULL DEFAULT '0',
+  `c_boolean_1` int(11) NOT NULL DEFAULT '0',
+  `c_boolean_2` int(11) NOT NULL DEFAULT '0',
+  `c_boolean_3` int(11) NOT NULL DEFAULT '0',
+  `c_boolean_4` int(11) NOT NULL DEFAULT '0',
+  `c_boolean_5` int(11) NOT NULL DEFAULT '0',
+  `c_item_id_10` int(11) NOT NULL DEFAULT '0',
+  `c_url_reference` varchar(255) NOT NULL DEFAULT '',
+  `c_name_first` varchar(255) NOT NULL DEFAULT '',
+  `c_name_last` varchar(255) NOT NULL DEFAULT '',
+  `c_phone` varchar(255) NOT NULL DEFAULT '',
+  `c_comments` text,
+  `c_student_name_first` varchar(255) NOT NULL DEFAULT '',
+  `c_student_name_last` varchar(255) NOT NULL DEFAULT '',
+  `c_grade` varchar(255) NOT NULL DEFAULT '',
+  `c_when` varchar(255) NOT NULL DEFAULT '',
+  `c_subjects` varchar(255) NOT NULL DEFAULT '',
+  `c_year` varchar(255) NOT NULL DEFAULT '',
+  `c_age` varchar(255) NOT NULL DEFAULT '',
+  `c_street` varchar(255) NOT NULL DEFAULT '',
+  `c_street_2` varchar(255) NOT NULL DEFAULT '',
+  `c_state` varchar(255) NOT NULL DEFAULT '',
+  `c_city` varchar(255) NOT NULL DEFAULT '',
+  `c_postal_code` varchar(255) NOT NULL DEFAULT '',
+  `c_letter` text,
+  `c_resume` text,
+  `c_states` varchar(255) NOT NULL DEFAULT '',
+  `c_credentials` varchar(255) NOT NULL DEFAULT '',
+  `c_teaching` varchar(255) NOT NULL DEFAULT '',
+  `c_educator_terms` int(11) NOT NULL DEFAULT '0',
+  `c_source` varchar(255) NOT NULL DEFAULT '',
+  `c_source_other` varchar(255) NOT NULL DEFAULT '',
+  `c_form_id` int(11) NOT NULL DEFAULT '0',
+  `c_promo_code` varchar(255) NOT NULL DEFAULT '',
+  `c_school` varchar(255) NOT NULL DEFAULT '',
+  `c_registration_code` varchar(255) NOT NULL DEFAULT '',
+  `c_group_id_1` int(11) NOT NULL DEFAULT '0',
+  `c_extra` text,
+  `c_date_hidden` varchar(255) NOT NULL DEFAULT '',
+  `c_time_hidden` varchar(255) NOT NULL DEFAULT '',
+  `c_h2` varchar(255) NOT NULL DEFAULT '',
+  `c_content_right` text,
+  `c_text_on_left` int(11) NOT NULL DEFAULT '1',
+  `c_tag_id_1` int(11) NOT NULL DEFAULT '0',
+  `c_tag_id_2` int(11) NOT NULL DEFAULT '0',
+  `c_tag_id_3` int(11) NOT NULL DEFAULT '0',
+  `c_tag_id_4` int(11) NOT NULL DEFAULT '0',
+  `c_tag_id_5` int(11) NOT NULL DEFAULT '0',
+  `c_url_fragment` varchar(255) NOT NULL DEFAULT '',
+  `c_url_base` varchar(255) NOT NULL DEFAULT '',
+  `c_col_min` int(11) NOT NULL DEFAULT '0',
+  `c_col_max` int(11) NOT NULL DEFAULT '0',
+  `c_visible_home` int(11) NOT NULL DEFAULT '0',
+  `c_content_home` text,
+  `c_content_home_top` text,
+  `c_content_home_bottom` text,
+  `c_css` text,
+  `c_video_id` text,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `t_item`
+--
+
+LOCK TABLES `t_item` WRITE;
+/*!40000 ALTER TABLE `t_item` DISABLE KEYS */;
+INSERT INTO `t_item` VALUES (456753540,3,1,'Home',NULL,1,1,0,'2012-02-20 10:20:09','','',0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','zzz','ＩＮＣＲＥＭＥＮＴＡＬ','','',NULL,NULL,NULL,'',NULL,'','','',NULL,NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','',NULL,1,0,0,0,0,0,'','',1,5,0,NULL,NULL,NULL,NULL,NULL),(891493419,2,0,'Social','/tag/social/',1,1,0,'2015-07-19 11:11:23','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','',NULL,NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','',NULL,1,0,0,0,0,0,'','social',0,0,0,NULL,NULL,NULL,NULL,NULL),(843241214,1,0,'Diatoms','/diatoms/',1,1,90,'2015-07-19 11:01:23','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<h1>Diatoms</h1>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<div class=\"youtube\"><div id=\"player\"></div></div>',1,300817722,0,0,0,0,'','',0,0,1,NULL,'<span class=\"screenshot\" id=\"screenshot-5\"></span>','<h2>Diatoms</h2>',NULL,'vXid2lUnXPI'),(869931740,1,0,'YouTube','/youtube/',1,1,140,'2012-09-27 12:44:05','','',0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<h1>YouTube</h1>\r\n<p>YouTube.</p>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<img alt=\"YouTube\" src=\"/img/youtube.svg\" width=\"108\">',1,891493419,0,0,0,0,'','',0,0,0,NULL,'<img alt=\"YouTube\" src=\"/img/youtube.svg\" width=\"290\">','<p>YouTube.</p>',NULL,''),(900429367,1,0,'Every Tap Counts','/every_tap_counts/',1,1,130,'2012-09-27 12:58:50','','',0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<h1>Every Tap Counts</h1>\r\n<p>Every tap counts.</p>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','',1,0,0,0,0,0,'','',0,0,1,NULL,'<iframe height=\"55\" src=\"http://lcd.iffy.studio/Rirel+Gnc+Pbhagf/h3/\" width=\"290\"></iframe>','',NULL,''),(238896112,1,0,'Twitter','/twitter/',1,1,120,'2012-09-27 14:16:09','','',0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<img height=\"176\" src=\"/img/twitter.svg\" width=\"216\"><p>\r\n\r\n<h1>Twitter</h1>\r\n\r\n<p><a href=\"https://twitter.com/IncrementalApp\">@IncrementalApp</a></p>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<a class=\"twitter-timeline hide\" href=\"https://twitter.com/IncrementalApp/timelines/625072785505648641\" data-widget-id=\"625074292741398528\" style=\"display: none;\">Incremental</a>\r\n<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>',1,891493419,0,0,0,0,'','',0,0,0,NULL,'<img height=\"236\" src=\"/img/twitter.svg\" width=\"290\">','<p><a href=\"https://twitter.com/IncrementalApp\">@IncrementalApp</a></p>',NULL,''),(311969238,1,0,'Facebook','/facebook/',1,1,30,'2012-09-27 15:05:53','','',0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<img height=\"216\" src=\"/img/facebook.svg\" width=\"216\">\r\n\r\n<h1>Facebook</h1>\r\n\r\n<p><a href=\"https://www.facebook.com/incremental\">facebook.com/incremental</a></p>\r\n\r\n<div id=\"fb-root\"></div>\r\n\r\n<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3\";  fjs.parentNode.insertBefore(js, fjs);}(document, \'script\', \'facebook-jssdk\'));</script>\r\n\r\n<div class=\"fb-like\" data-action=\"like\" data-href=\"https://www.facebook.com/incremental\" data-layout=\"button\" data-share=\"true\" data-show-faces=\"true\"></div>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<div class=\"fb-post\" data-href=\"https://www.facebook.com/incremental/posts/491046764386394\" data-width=\"593\">\r\n\r\n<div class=\"fb-xfbml-parse-ignore\"></div></div>',1,891493419,0,0,0,0,'','',0,0,0,NULL,'<img height=\"290\" src=\"/img/facebook.svg\" width=\"290\">','<p><a href=\"https://www.facebook.com/incremental\">facebook.com/incremental</a></p>\r\n\r\n<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3\";  fjs.parentNode.insertBefore(js, fjs);}(document, \'script\', \'facebook-jssdk\'));</script>\r\n\r\n<div class=\"fb-like\" data-action=\"like\" data-href=\"https://www.facebook.com/incremental\" data-layout=\"button\" data-share=\"true\" data-show-faces=\"true\"></div>',NULL,''),(904378138,1,0,'Medium','/medium/',1,1,40,'2015-07-26 08:40:07','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<img src=\"/img/medium.svg\" width=\"216\">\r\n<h1>Medium</h1>\r\n<p><a href=\"https://medium.com/@Incremental\">medium.com/@incremental</a></p>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<script async src=\"https://static.medium.com/embed.js\"></script><a class=\"m-story\" data-collapsed=\"true\" data-width=\"593\" href=\"https://medium.com/@barnabygunning/incremental-998f306143bb\" style=\"display: none;\">Incremental</a>',1,891493419,0,0,0,0,'','',0,0,0,NULL,'<img src=\"/img/medium.svg\" width=\"290\">','<p><a href=\"https://medium.com/@Incremental\">medium.com/@incremental</a></p>',NULL,''),(276006260,1,0,'What Did We Create','/what_did_we_create/',1,1,50,'2015-07-28 22:38:23','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<h1>What Did We Create</h1>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','',1,0,0,0,0,0,'','',0,0,1,NULL,'<iframe height=\"55\" src=\"http://lcd.iffy.studio/Jung+Qvq+Jr+Perngr/ceb6420/\" width=\"290\"></iframe>','',NULL,''),(873641079,4,0,'About','/about/',1,1,0,'2012-09-30 00:08:25','','',0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<img height=\"216\" src=\"/img/icon.svg\" width=\"216\">',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<h1>About</h1>\r\n<p>Incremental started as a rudimentary \"game\": tap, get a point.</p>\r\n<p>The inspiration was a high school pastime using our Casio calculators, competing to see how many times we could surreptitiously hit the \"M+\" key during class.</p>\r\n<p>Then: why not make the taps more interesting?</p>\r\n<p>Dots. Xylophone. Rings. Bass synth. Flowers. Drum box. Gravity.</p>\r\n<p>What did we create?</p>',1,0,0,0,0,0,'','',0,0,0,NULL,NULL,NULL,'',NULL),(839712382,4,0,'Support','/support/',1,1,0,'2015-07-19 13:02:57','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<img height=\"216\" src=\"/img/icon.svg\" width=\"216\">',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<h1>Support</h1>\r\n<p><a href=\"mailto:support@increment.al\">support@increment.al</a></p>',1,0,0,0,0,0,'','',0,0,0,NULL,NULL,NULL,'',NULL),(205596079,2,1,'STAGING','/tag/staging/',1,1,0,'2013-01-04 19:22:35','','',0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','',NULL,NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','',NULL,1,0,0,0,0,0,'','staging',0,0,0,NULL,NULL,NULL,NULL,NULL),(301128922,1,0,'Flowers','/flowers/',1,1,110,'2015-07-27 16:03:38','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<h1>Flowers</h1>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<div class=\"youtube\"><div id=\"player\"></div></div>',1,300817722,0,0,0,0,'','',0,0,1,NULL,'<span class=\"screenshot\" id=\"screenshot-2\"></span>','<h2>Flowers</h2>',NULL,'HV-59u7rxrs'),(345694232,1,0,'Hearts','/hearts/',1,1,70,'2015-07-27 16:19:40','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<h1>Hearts</h1>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<div class=\"youtube\"><div id=\"player\"></div></div>',1,300817722,0,0,0,0,'','',0,0,1,NULL,'<span class=\"screenshot\" id=\"screenshot-4\"></span>','<h2>Hearts</h2>',NULL,'pPrsPgWKRCY'),(919180836,1,0,'Download','/download/',1,1,10,'2013-04-11 13:23:51','','',0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<img height=\"64\" src=\"/img/download.svg\" width=\"216\">\r\n<h1>App Store</h1>\r\n<p><a href=\"http://appstore.com/incremental\">appstore.com/incremental</a></p>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<h1>Incremental</h1>\r\n<p>Dots. Xylophone. Rings. Bass synth. Flowers. Drum box. Gravity.</p>\r\n<p>What did we create?</p>\r\n<div class=\"mt-16\"><div id=\"player\"></div></div>',1,0,0,0,0,0,'','',0,0,1,NULL,'<img height=\"86\" src=\"/img/download.svg\" width=\"290\">','<h2>Download</h2>\r\n<p>Flowers. Bass synth. Gravity.</p>\r\n<p>What did we create?</p>',NULL,'eT_Y92uZvec'),(848975143,1,0,'Boxes','/boxes/',1,1,60,'2015-07-28 22:26:10','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<h1>Boxes</h1>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<div class=\"youtube\"><div id=\"player\"></div></div>',1,300817722,0,0,0,0,'','',0,0,1,NULL,'<span class=\"screenshot\" id=\"screenshot-1\"></span>','<h2>Boxes</h2>',NULL,'-0pofmtQ3ZE'),(397415700,1,0,'Rings','/rings/',1,1,100,'2015-07-28 19:55:56','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<h1>Rings</h1>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<div class=\"youtube\"><div id=\"player\"></div></div>',1,300817722,0,0,0,0,'','',0,0,1,NULL,'<span class=\"screenshot\" id=\"screenshot-3\"></span>','<h2>Rings</h2>',NULL,'_MGkEJCnDw0'),(396492621,2,0,'Screenshots','/tag/screenshots/',1,1,0,'2015-07-19 10:09:06','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','',NULL,NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','',NULL,1,0,0,0,0,0,'','screenshots',0,0,0,NULL,NULL,NULL,NULL,NULL),(300817722,2,0,'Videos','/tag/videos/',1,1,0,'2015-07-27 12:42:57','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','',NULL,NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','',NULL,1,0,0,0,0,0,'','videos',0,0,0,NULL,NULL,NULL,NULL,NULL),(575751195,1,0,'Pebbles','/pebbles/',1,1,20,'2015-07-28 19:25:03','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<h1>Pebbles</h1>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','<div class=\"youtube\"><div id=\"player\"></div></div>',1,300817722,0,0,0,0,'','',0,0,1,NULL,'<span class=\"screenshot\" id=\"pebbles\"></span>','<h2>Pebbles</h2>',NULL,'dpmfsq2Drq8'),(301595807,1,0,'Performance Leisure','/performance_leisure/',1,1,80,'2015-07-28 22:41:41','',NULL,0,0,0,0,NULL,'',0.00,0.00,'',NULL,'',0,0,0,0.00,0,0,0,NULL,'','','','','',NULL,NULL,NULL,'',NULL,'','','','<h1>Performance Leisure</h1>',NULL,'',NULL,0,'0000-00-00 00:00:00',NULL,'','',0,0,0,0,0,0,0,0,0,'',0.00,0,'',0,'',0,0,'',0,0,0,0,0,0,'','',0,'','','','','',NULL,NULL,NULL,NULL,NULL,'','','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','','','',NULL,'','','','','','','','','','','','',NULL,NULL,'','','',0,'','',0,'','','',0,NULL,'','','','',1,0,0,0,0,0,'','',0,0,1,NULL,'<iframe height=\"55\" src=\"http://lcd.iffy.studio/Cresbeznapr+Yrvfher/cfbca04/\" width=\"290\"></iframe>','',NULL,'');
+/*!40000 ALTER TABLE `t_item` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `t_item_type`
+--
+
+DROP TABLE IF EXISTS `t_item_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_item_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `c_name` varchar(255) NOT NULL DEFAULT '',
+  `c_sequence` int(11) NOT NULL DEFAULT '0',
+  `c_hidden` int(11) NOT NULL DEFAULT '0',
+  `c_hide_name` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `t_item_type`
+--
+
+LOCK TABLES `t_item_type` WRITE;
+/*!40000 ALTER TABLE `t_item_type` DISABLE KEYS */;
+INSERT INTO `t_item_type` VALUES (1,'Post',0,0,0),(2,'Tag',0,0,0),(3,'Home',0,0,0),(4,'Page',0,0,0);
+/*!40000 ALTER TABLE `t_item_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `t_item_type_column`
+--
+
+DROP TABLE IF EXISTS `t_item_type_column`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_item_type_column` (
+  `item_type_id` int(11) NOT NULL DEFAULT '0',
+  `item_column_id` varchar(255) NOT NULL DEFAULT '',
+  `input_type_id` int(11) NOT NULL DEFAULT '6',
+  `c_item_type_id` int(11) NOT NULL DEFAULT '0',
+  `c_group_type_id` int(11) NOT NULL DEFAULT '0',
+  `lookup_type_id` int(11) NOT NULL DEFAULT '0',
+  `c_label` varchar(255) NOT NULL DEFAULT '',
+  `c_css_class` varchar(255) NOT NULL DEFAULT '',
+  `c_required` int(11) NOT NULL DEFAULT '0',
+  `c_default` varchar(255) NOT NULL DEFAULT '',
+  `c_sequence` int(11) NOT NULL DEFAULT '0',
+  `c_summary` int(11) NOT NULL DEFAULT '0',
+  `c_read_only_add` int(11) NOT NULL DEFAULT '0',
+  `c_read_only_edit` int(11) NOT NULL DEFAULT '0',
+  `c_hide_add` int(11) NOT NULL DEFAULT '0',
+  `c_hide_edit` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`item_type_id`,`item_column_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `t_item_type_column`
+--
+
+LOCK TABLES `t_item_type_column` WRITE;
+/*!40000 ALTER TABLE `t_item_type_column` DISABLE KEYS */;
+INSERT INTO `t_item_type_column` VALUES (0,'c_url',6,0,0,0,'URL','',1,'',10,1,0,0,0,0),(0,'c_title',6,0,0,0,'Title','',0,'',15,0,0,0,0,0),(0,'c_h1',6,0,0,0,'H1','',0,'',20,0,0,0,0,0),(0,'c_h2',6,0,0,0,'H2','',0,'',25,0,0,0,0,0),(3,'c_meta_keywords',6,0,0,0,'Meta Keywords','',0,'',25,0,0,0,0,0),(2,'c_url_base',6,0,0,0,'URL Base','',1,'',15,1,0,0,0,0),(1,'c_tag_id_5',9,2,0,0,'Tag 5','',0,'',85,0,0,0,0,0),(1,'c_tag_id_4',9,2,0,0,'Tag 4','',0,'',80,0,0,0,0,0),(1,'c_tag_id_3',9,2,0,0,'Tag 3','',0,'',75,0,0,0,0,0),(1,'c_tag_id_2',9,2,0,0,'Tag 2','',0,'',70,0,0,0,0,0),(1,'c_tag_id_1',9,2,0,0,'Tag 1','',0,'',65,1,0,0,0,0),(1,'c_content_home_bottom',7,0,0,0,'Pod Text','',0,'',60,0,0,0,0,0),(1,'c_content_home_top',7,0,0,0,'Pod Image','',0,'',55,0,0,0,0,0),(1,'c_content_right',7,0,0,0,'Right Content','',0,'',50,0,0,0,0,0),(2,'c_url',6,0,0,0,'URL','',0,'',10,0,0,0,1,1),(1,'c_content_left',7,0,0,0,'Left Content','',0,'',45,0,0,0,0,0),(1,'c_text_on_left',4,0,0,0,'Text On Left','',0,'',40,1,0,0,0,0),(1,'c_sequence',6,0,0,0,'Sequence','',0,'',35,1,0,0,0,0),(1,'c_visible_home',4,0,0,0,'Display On Home Page','',0,'',30,1,0,0,0,0),(1,'c_h2',6,0,0,0,'H2','',0,'',25,0,0,0,0,0),(3,'c_meta_description',6,0,0,0,'Meta Description','',0,'',20,0,0,0,0,0),(3,'c_title',6,0,0,0,'Title','',1,'',10,1,0,0,0,0),(1,'c_h1',6,0,0,0,'H1','',0,'',20,0,0,0,0,0),(1,'c_title',6,0,0,0,'Title','',0,'',15,0,0,0,0,0),(4,'c_content_right',7,0,0,0,'Right Content','',0,'',40,0,0,0,0,0),(4,'c_content_left',7,0,0,0,'Left Content','',0,'',35,0,0,0,0,0),(4,'c_text_on_left',4,0,0,0,'Text On Left','',0,'',30,1,0,0,0,0),(4,'c_h2',6,0,0,0,'H2','',0,'',25,0,0,0,0,0),(4,'c_h1',6,0,0,0,'H1','',0,'',20,0,0,0,0,0),(4,'c_title',6,0,0,0,'Title','',0,'',15,0,0,0,0,0),(4,'c_url',6,0,0,0,'URL','',1,'',10,1,0,0,0,0),(4,'c_meta_description',6,0,0,0,'Meta Description','',0,'',45,0,0,0,0,0),(4,'c_meta_keywords',6,0,0,0,'Meta Keywords','',0,'',50,0,0,0,0,0),(4,'c_css',7,0,0,0,'CSS','',0,'',55,0,0,0,0,0),(1,'c_meta_description',6,0,0,0,'Meta Description','',0,'',90,0,0,0,0,0),(1,'c_url',6,0,0,0,'URL','',1,'',10,1,0,0,0,0),(1,'c_meta_keywords',6,0,0,0,'Meta Keywords','',0,'',95,0,0,0,0,0),(1,'c_video_id',6,0,0,0,'Video ID','',0,'',36,1,0,0,0,0);
+/*!40000 ALTER TABLE `t_item_type_column` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-06-01  4:09:43

@@ -1,0 +1,14 @@
+<div id="posts">
+% foreach $iH ( @$itemAH ) {
+  <div class="post"><a href="<% $iH->{ c_url } %>">
+    <&| /hoo/format.mas, double_space => 1 &><% $iH->{ c_content_home_top } %></&>
+    <&| /hoo/format.mas, double_space => 1 &><% $iH->{ c_content_home_bottom } %></&>
+  </a></div>
+% }
+</div>
+<%args>
+  $itemAH
+</%args>
+<%init>
+  my ( $iH );
+</%init>
